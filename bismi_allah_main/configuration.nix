@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, audio, ... }:
 
 {
   imports =
@@ -76,6 +76,19 @@ hardware.bluetooth.enable = true;
   tmux
   #  wget
 
+  #programming
+  libgcc
+  gcc
+  gnumake
+  pkg-config
+  #conan
+  yasm
+  python3
+
+  #building and testing
+  qemu
+  #virtualbox
+
   #desktop
   brightnessctl
   waybar
@@ -96,6 +109,27 @@ programs.neovim = {
 };
 
 programs.tmux.enable = true;
+
+#c dev
+#nixpkgs.nativeBuildInput = [ pkgs.pkg-config ];
+#nixpkgs.mkDerivation.nativeBuildInput = [ pkgs.pkg-config ];
+
+#with import <nixpkgs> {};
+#nixpkgs.stdenv.mkDerivation.name = "env";
+#stdenv.mkDerivation {
+#  name = "env";
+#  nativeBuildInputs = [ pkg-config ];
+#  buildInputs = [
+#    cryptsetup
+#  ];
+#}
+
+#virtualisation
+#virtualisation.virtualbox.host.enable = true;
+#virtualisation.virtualbox.host.enableExtensionPack = true;
+#users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+#programs.virtualbox.enable = true;
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
