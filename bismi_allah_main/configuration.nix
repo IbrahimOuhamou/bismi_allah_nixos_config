@@ -24,6 +24,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  systemd.services.NetworkManager-wait-online.enable = pkgs.lib.mkForce false;
 
   # Set your time zone.
   time.timeZone = "Africa/Casablanca";
@@ -60,7 +61,7 @@ hardware.bluetooth.enable = true;
   users.users.ibrahimo = {
     isNormalUser = true;
     description = "Ibrahim Ouhamou";
-    extraGroups = [ "networkmanager" "wheel" "audio"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "libvirtd"];
     packages = with pkgs; [];
   };
 
@@ -81,21 +82,39 @@ hardware.bluetooth.enable = true;
   gcc
   gnumake
   pkg-config
+  gdb
+  clang
+  llvmPackages_9.clang-unwrapped
   #conan
   yasm
   python3
 
+  #libraries
+  #SDL2
+  #SDL2_ttf
+
   #building and testing
   qemu
-  #virtualbox
+
+  #cyber
+  nmap
+  ipscan
 
   #desktop
   brightnessctl
   waybar
+  pcmanfm
   
   #apps
   chromium #web browser
-  ];
+  gimp
+  #bismi Allah
+  gparted
+];
+
+fonts.packages = with pkgs; [
+  font-awesome
+];
 
 programs.sway.enable = true;
 xdg.portal.wlr.enable = true;
@@ -109,6 +128,9 @@ programs.neovim = {
 };
 
 programs.tmux.enable = true;
+
+#for gparted to work by the will of Allah
+security.polkit.enable = true;
 
 #c dev
 #nixpkgs.nativeBuildInput = [ pkgs.pkg-config ];
@@ -125,6 +147,11 @@ programs.tmux.enable = true;
 #}
 
 #virtualisation
+virtualisation.libvirtd.enable = true;
+programs.virt-manager.enable = true;
+services.qemuGuest.enable = true;
+#users.users.ibrahimo.extraGroups = ["libvirtd"];
+
 #virtualisation.virtualbox.host.enable = true;
 #virtualisation.virtualbox.host.enableExtensionPack = true;
 #users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
