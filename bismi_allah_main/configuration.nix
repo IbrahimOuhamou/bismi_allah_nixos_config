@@ -57,6 +57,11 @@ hardware.pulseaudio.support32Bit = true;    ## If compatibility with 32-bit appl
 nixpkgs.config.pulseaudio = true;
 hardware.bluetooth.enable = true;
 
+# Enable the X11 windowing system
+services.xserver.enable = true;
+services.xserver.displayManager.gdm.enable = true;
+services.xserver.desktopManager.gnome.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ibrahimo = {
     isNormalUser = true;
@@ -87,7 +92,12 @@ hardware.bluetooth.enable = true;
   llvmPackages_9.clang-unwrapped
   #conan
   yasm
-  python3
+  #python3
+  #(python311.withPackages(ps: with ps; [ tkinter ]))
+  (pkgs.python3.withPackages (python-pkgs: [ python-pkgs.tkinter ]))
+  #python311Packages.pip
+  #python311Packages.tkinter
+  #pip
 
   #libraries
   #SDL2
@@ -108,8 +118,11 @@ hardware.bluetooth.enable = true;
   #apps
   chromium #web browser
   gimp
+  discord
+  telegram-desktop
   #bismi Allah
   gparted
+
 ];
 
 fonts.packages = with pkgs; [
@@ -129,8 +142,10 @@ programs.neovim = {
 
 programs.tmux.enable = true;
 
+programs.steam.enable = true;
+
 #for gparted to work by the will of Allah
-security.polkit.enable = true;
+#security.polkit.enable = true;
 
 #c dev
 #nixpkgs.nativeBuildInput = [ pkgs.pkg-config ];
