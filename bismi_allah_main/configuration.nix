@@ -142,8 +142,6 @@ programs.neovim = {
 
 programs.tmux.enable = true;
 
-programs.steam.enable = true;
-
 #for gparted to work by the will of Allah
 #security.polkit.enable = true;
 
