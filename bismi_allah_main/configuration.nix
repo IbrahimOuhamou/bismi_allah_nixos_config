@@ -56,6 +56,7 @@ hardware.pulseaudio.enable = true;
 hardware.pulseaudio.support32Bit = true;    ## If compatibility with 32-bit applications is desired.
 nixpkgs.config.pulseaudio = true;
 hardware.bluetooth.enable = true;
+services.blueman.enable = true;
 
 # Enable the X11 windowing system
 services.xserver.enable = true;
@@ -123,6 +124,8 @@ services.xserver.desktopManager.gnome.enable = true;
   #bismi Allah
   gparted
 
+  libreoffice
+  anki
 ];
 
 fonts.packages = with pkgs; [
