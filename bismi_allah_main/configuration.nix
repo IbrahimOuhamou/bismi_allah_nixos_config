@@ -141,6 +141,7 @@ services.xserver.desktopManager.gnome.enable = true;
   brightnessctl
   waybar
   pcmanfm
+  pamixer
   
   #apps
   chromium #web browser
