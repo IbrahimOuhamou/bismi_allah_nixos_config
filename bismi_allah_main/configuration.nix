@@ -51,12 +51,38 @@
   };
 
 #Sound
-hardware.pulseaudio.package = pkgs.pulseaudioFull; # support for bluetooth headsets
-hardware.pulseaudio.enable = true;
-hardware.pulseaudio.support32Bit = true;    ## If compatibility with 32-bit applications is desired.
-nixpkgs.config.pulseaudio = true;
-hardware.bluetooth.enable = true;
-services.blueman.enable = true;
+#hardware.pulseaudio.package = pkgs.pulseaudioFull; # support for bluetooth headsets
+hardware.pulseaudio.enable = false;
+#hardware.pulseaudio.support32Bit = true;    ## If compatibility with 32-bit applications is desired.
+#nixpkgs.config.pulseaudio = true;
+#hardware.bluetooth.enable = true;
+#services.blueman.enable = true;
+sound.enable=false;
+security.rtkit.enable = true;
+  services.pipewire = {
+  enable = true;
+  alsa.enable = true;
+  alsa.support32Bit = true;
+  pulse.enable = true;
+};
+environment.etc = {
+	"wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
+		bluez_monitor.properties = {
+			["bluez5.enable-sbc-xq"] = true,
+			["bluez5.enable-msbc"] = true,
+			["bluez5.enable-hw-volume"] = true,
+			["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+		}
+	'';
+};
+#services.pipewire.extraConfig.pipewire."92-low-latency" = {
+#  context.properties = {
+#    default.clock.rate = 48000;
+#    default.clock.quantum = 32;
+#    default.clock.min-quantum = 32l
+#    default.clock.max-quantum = 32;
+#  };
+#};
 
 # Enable the X11 windowing system
 services.xserver.enable = true;
@@ -126,6 +152,8 @@ services.xserver.desktopManager.gnome.enable = true;
 
   libreoffice
   anki
+
+  steam
 ];
 
 fonts.packages = with pkgs; [
@@ -144,23 +172,11 @@ programs.neovim = {
 };
 
 programs.tmux.enable = true;
-
-#for gparted to work by the will of Allah
-#security.polkit.enable = true;
+programs.steam.enable = true;
 
 #c dev
 #nixpkgs.nativeBuildInput = [ pkgs.pkg-config ];
 #nixpkgs.mkDerivation.nativeBuildInput = [ pkgs.pkg-config ];
-
-#with import <nixpkgs> {};
-#nixpkgs.stdenv.mkDerivation.name = "env";
-#stdenv.mkDerivation {
-#  name = "env";
-#  nativeBuildInputs = [ pkg-config ];
-#  buildInputs = [
-#    cryptsetup
-#  ];
-#}
 
 #virtualisation
 virtualisation.libvirtd.enable = true;
