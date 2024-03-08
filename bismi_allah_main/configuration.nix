@@ -132,6 +132,8 @@ services.xserver.desktopManager.gnome.enable = true;
 
   #building and testing
   qemu
+  wine64Packages.waylandFull
+  wineWow64Packages.waylandFull
 
   #cyber
   nmap
@@ -153,8 +155,6 @@ services.xserver.desktopManager.gnome.enable = true;
 
   libreoffice
   anki
-
-  steam
 ];
 
 fonts.packages = with pkgs; [
@@ -173,7 +173,6 @@ programs.neovim = {
 };
 
 programs.tmux.enable = true;
-programs.steam.enable = true;
 
 #c dev
 #nixpkgs.nativeBuildInput = [ pkgs.pkg-config ];
