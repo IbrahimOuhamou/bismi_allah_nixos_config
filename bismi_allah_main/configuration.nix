@@ -1,3 +1,4 @@
+#in the name of Allah
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
@@ -132,7 +133,7 @@ services.xserver.desktopManager.gnome.enable = true;
 
   #building and testing
   qemu
-  wine64Packages.waylandFull
+  #wine64Packages.waylandFull
   wineWow64Packages.waylandFull
 
   #cyber
@@ -146,10 +147,12 @@ services.xserver.desktopManager.gnome.enable = true;
   pamixer
   
   #apps
-  chromium #web browser
+  #chromium #web browser
+  firefox
   gimp
   discord
   telegram-desktop
+  nextcloud-client
   #bismi Allah
   gparted
 
@@ -162,6 +165,7 @@ fonts.packages = with pkgs; [
 ];
 
 programs.sway.enable = true;
+programs.hyprland.enable = true;
 xdg.portal.wlr.enable = true;
 
 #bar
