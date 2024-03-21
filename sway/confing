@@ -20,7 +20,8 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu wofi --show drun
 
 ### Output configuration
 #
@@ -282,8 +283,8 @@ bindsym XF86AudioMute exec pamixer -t
 # bindsym XF86AudioMicMute exec
 
 #########Brightness
-bindsym XF86MonBrightnessUp exec brightnessctl s +10%
-bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 
 exec ~/projects/popping-dikr/bin/dikr
 
