@@ -1,11 +1,11 @@
 {
-    //"layer": "top", // Waybar at top layer
+    "layer": "top", // Waybar at top layer
     "position": "left", // Waybar position (top|bottom|left|right)
     "height": 500, // Waybar height (to be removed for auto height)
     "width": 0.5, // Waybar width
     "spacing": 15, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-right": ["hyprland/workspaces", "sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
+    "modules-right": ["hyprland/workspaces", "sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media", "tray"],
     //"modules-center": ["sway/window", "hyprland/window", "hyprland/submap"],
     "modules-left": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock"], // "tray"],
     // Modules configuration
@@ -144,8 +144,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        //"format": "{icon}\n{volume}\n{format_source}",
-        "format": "{icon}\n{volume}",
+        "format": "{icon}\n{volume}\n{format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",

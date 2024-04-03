@@ -9,6 +9,7 @@ stdenv.mkDerivation {
     gtk4
     glfw3
     glew
+    lua
     #pkgsCross.mingwW64.buildPackages.gcc
   ];
 }
