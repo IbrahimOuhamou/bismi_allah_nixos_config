@@ -1,3 +1,4 @@
+#بسم الله الرحمن الرحيم
 let
   pkgs = import <nixpkgs> {};
 in pkgs.mkShell {
