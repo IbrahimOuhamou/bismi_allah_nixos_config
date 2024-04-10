@@ -6,7 +6,7 @@ in pkgs.mkShell {
     (pkgs.python3.withPackages (python-pkgs: [
       python-pkgs.tkinter
       python-pkgs.django
-      python-pkgs.pillow
+      python-pkgs.mysqlclient
     ]))
   ];
 }
