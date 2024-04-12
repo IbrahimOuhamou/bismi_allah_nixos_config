@@ -11,6 +11,11 @@ window
     background: transparent;
 }
 
+#entry
+{
+    background: linear-gradient(90deg, rgba(100, 0, 100, 0.5), rgba(100, 100, 100, 0.1));
+}
+
 #entry:selected
 {
     background-color: lightblue;
