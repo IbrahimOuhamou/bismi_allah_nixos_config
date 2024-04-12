@@ -1,0 +1,30 @@
+/*بسم الله الرحمن الرحيم*/
+/*la ilaha illa Allah mohammed rassoul Allah*/
+
+window
+{
+    color: white;
+    background-color: black;
+    background: transparent;
+    font-weight: bold;
+}
+
+#entry:selected
+{
+    background-color: lightblue;
+    background: linear-gradient(90deg, #bbccdd, #dda5dd);
+    color: black;
+}
+
+#text:selected
+{
+    color: black;
+}
+
+#input
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+}
+
