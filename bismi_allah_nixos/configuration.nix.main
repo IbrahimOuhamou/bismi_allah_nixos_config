@@ -118,7 +118,7 @@ services.xserver.desktopManager.gnome.enable = true;
   gdb
   clang
   llvmPackages_9.clang-unwrapped
-  python
+  python3
 
   #building and testing
   qemu

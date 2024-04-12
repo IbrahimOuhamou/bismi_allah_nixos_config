@@ -51,6 +51,8 @@ exec swayidle -w \
           timeout 1600 'swaylock -f -c 000000' \
          timeout 2200 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
         before-sleep 'swaylock -f -c 000000'
+
+exec autotiling
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
