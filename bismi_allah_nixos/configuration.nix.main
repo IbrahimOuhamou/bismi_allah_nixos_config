@@ -118,35 +118,24 @@ services.xserver.desktopManager.gnome.enable = true;
   gdb
   clang
   llvmPackages_9.clang-unwrapped
-  #conan
-  yasm
-  #python3
-  #(python311.withPackages(ps: with ps; [ tkinter ]))
-  (pkgs.python3.withPackages (python-pkgs: [ python-pkgs.tkinter ]))
-  #python311Packages.pip
-  #python311Packages.tkinter
-  #pip
-
-  #libraries
-  #SDL2
-  #SDL2_ttf
+  python
 
   #building and testing
   qemu
   #wine64Packages.waylandFull
   wineWow64Packages.waylandFull
 
-  #cyber
-  nmap
-  ipscan
+  #wm
+  autotiling  #script to make sway autotile by the will of Allah
+  wofi	      #application launcher
+  waybar      #bar
+  pamixer     #audio
+  brightnessctl#for brightness
+  wf-recorder #screen recording we can run 'wf-recorder -a' by the will of Allah
 
   #desktop
-  brightnessctl
-  waybar
   pcmanfm
-  pamixer
   vlc
-  wf-recorder #screen recording we can run 'wf-recorder -a' by the will of Allah
   
   #apps
   #chromium #web browser
@@ -154,7 +143,6 @@ services.xserver.desktopManager.gnome.enable = true;
   gimp
   discord
   telegram-desktop
-  nextcloud-client
   #bismi Allah
   gparted
 
@@ -167,7 +155,6 @@ fonts.packages = with pkgs; [
 ];
 
 programs.sway.enable = true;
-programs.hyprland.enable = true;
 xdg.portal.wlr.enable = true;
 
 #bar
