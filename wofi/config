@@ -1,4 +1,4 @@
-show=run
+show=drun
 allow_images=true
 imag_size=64
 width=50%

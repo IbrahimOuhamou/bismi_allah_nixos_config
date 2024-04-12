@@ -3,10 +3,12 @@
 
 window
 {
+    font-weight: bold;
+    font-size: 18px;
+
     color: white;
     background-color: black;
     background: transparent;
-    font-weight: bold;
 }
 
 #entry:selected
