@@ -285,7 +285,7 @@ bar swaybar_command waybar
 # titlebar_padding 1
 # titlebar_border_thickness 0
 
-default_border pixel
+default_border pixel 4
 default_floating_border none
 titlebar_padding 1
 titlebar_border_thickness 1
