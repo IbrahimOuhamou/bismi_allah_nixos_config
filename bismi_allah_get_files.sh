@@ -29,21 +29,15 @@ echo "will copy wofi's config by the will of Allah"
 cp -r ~/.config/wofi/* wofi/
 
 echo ""
-echo "*******************"
-echo "    git status:"
-echo "*******************"
+echo "*******************                   git status              *******************"
 git status
 
 echo ""
-echo "*******************"
-echo "  git add --all "
-echo "*******************"
+echo "*******************                   git add --all           *******************"
 git add --all
 
 echo ""
-echo "*******************"
-echo "  git add commit -am \"alhamdo li Allah\" "
-echo "*******************"
+echo "*******************                   git add commit -am \"alhamdo li Allah\" *******************"
 echo ""
 git commit -am "alhamdo li Allah"
 
