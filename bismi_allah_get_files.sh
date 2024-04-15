@@ -5,9 +5,7 @@ echo "this script will get all the dotfiles in the system and copy them to this 
 echo "system => repo"
 
 echo ""
-echo "*******************"
-echo "copying by the will of Allah"
-echo "*******************"
+echo "*******************                   copying by the will of Allah    *******************"
 echo ""
 
 echo "will copy system's config by the will of Allah"
