@@ -5,7 +5,7 @@ echo "this script will get all the dotfiles in the system and copy them to this 
 echo "system => repo"
 
 echo ""
-echo "*******************                   copying by the will of Allah    *******************"
+echo "*******************           copying by the will of Allah    *******************"
 echo ""
 
 echo "will copy system's config by the will of Allah"
@@ -35,7 +35,7 @@ echo "*******************                   git add --all           ************
 git add --all
 
 echo ""
-echo "*******************                   git add commit -am \"alhamdo li Allah\" *******************"
+echo "*******************   git add commit -am \"alhamdo li Allah\" *******************"
 echo ""
 git commit -am "alhamdo li Allah"
 
