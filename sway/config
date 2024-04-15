@@ -27,7 +27,8 @@ set $menu wofi
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
 #output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg ~/pictures/wallpapers/dikr_image.jpg fill
+#output * bg wallpapers/dikr_image.jpg fill
+output * bg wallpapers/quran.jpg fill
 
 #
 # Example configuration:
@@ -278,10 +279,15 @@ bindsym $mod+r mode "resize"
 
 bar swaybar_command waybar
 
-default_border none
+# default_border none
+# default_floating_border none
+# titlebar_padding 1
+# titlebar_border_thickness 0
+
+default_border pixel
 default_floating_border none
 titlebar_padding 1
-titlebar_border_thickness 0
+titlebar_border_thickness 1
 
 gaps inner 10
 gaps outer 5

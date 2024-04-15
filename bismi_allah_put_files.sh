@@ -11,22 +11,22 @@ echo ""
 
 echo "will copy the dev_envs by the will of Allah"
 mkdir ~/helpers
-cp dev_envs/* ~/helpers
+cp -r dev_envs/* ~/helpers
 
 echo "will copy sway's config by the will of Allah"
 mkdir ~/.config/sway
-cp sway/* ~/.config/sway/
+cp -r sway/* ~/.config/sway/
 
 echo "will copy foot's config by the will of Allah"
 mkdir ~/.config/foot
-cp foot/* ~/.config/foot/
+cp -r foot/* ~/.config/foot/
 
 echo "will copy waybar's config by the will of Allah"
 mkdir ~/.config/waybar
-cp waybar/* ~/.config/waybar/
+cp -r waybar/* ~/.config/waybar/
 
 echo "will copy wofi's config by the will of Allah"
-cp wofi/* ~/.config/wofi/
+cp -r wofi/* ~/.config/wofi/
 
 
 
