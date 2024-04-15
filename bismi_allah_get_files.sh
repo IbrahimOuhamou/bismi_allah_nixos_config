@@ -39,14 +39,12 @@ echo ""
 echo "*******************"
 echo "  git add --all "
 echo "*******************"
-echo ""
 git add --all
 
 echo ""
 echo "*******************"
 echo "  git add commit -am \"alhamdo li Allah\" "
 echo "*******************"
-echo ""
 git commit -am "alhamdo li Allah"
 
 
