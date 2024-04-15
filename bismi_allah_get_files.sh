@@ -32,7 +32,6 @@ echo ""
 echo "*******************"
 echo "    git status:"
 echo "*******************"
-echo ""
 git status
 
 echo ""
