@@ -29,6 +29,7 @@ set $menu wofi
 #output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output * bg wallpapers/dikr_image.jpg fill
 output * bg wallpapers/quran.jpg fill
+#output * bg wallpapers/keep_calm.jpg fill
 
 #
 # Example configuration:
