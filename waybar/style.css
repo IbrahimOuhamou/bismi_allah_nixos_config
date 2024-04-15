@@ -6,7 +6,7 @@
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 window#waybar {
@@ -95,6 +95,10 @@ button:hover {
 #mpd {
     padding: 0 10px;
     color: #ffffff;
+
+    background-color: grey;
+    border: 5px solid;
+    border-color: white;
 }
 
 #window,
@@ -112,12 +116,13 @@ button:hover {
     margin-right: 0;
 }
 
+/*
 #clock {
     background-color: #64727D;
 }
+*/
 
 #battery {
-    background-color: #ffffff;
     color: #000000;
 }
 
@@ -147,6 +152,7 @@ label:focus {
     background-color: #000000;
 }
 
+/*
 #cpu {
     background-color: #2ecc71;
     color: #000000;
@@ -196,18 +202,17 @@ label:focus {
     color: #2a5c45;
     min-width: 100px;
 }
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
+*/
 
 #custom-media.custom-vlc {
     background-color: #ffa000;
 }
 
+/*
 #temperature {
     background-color: #f0932b;
 }
+*/
 
 #temperature.critical {
     background-color: #eb4d4b;
@@ -253,16 +258,16 @@ label:focus {
 }
 
 #language {
-    background: #00b093;
+    /*background: #00b093;
     color: #740864;
-    /*padding: 0 5px;
+    padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;*/
 }
 
 #keyboard-state {
-    background: #97e1ad;
-    color: #000000;
+    /*background: #97e1ad;
+    color: #000000;*/
     padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;
@@ -272,9 +277,11 @@ label:focus {
     padding: 0 5px;
 }
 
+/*
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
+*/
 
 #scratchpad {
     background: rgba(0, 0, 0, 0.2);
