@@ -41,4 +41,5 @@ git commit -am "alhamdo li Allah"
 
 echo ""
 echo "*******************                   git push                *******************"
+git push
 
