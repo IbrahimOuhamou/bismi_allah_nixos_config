@@ -6,6 +6,7 @@ echo "system => repo"
 
 echo ""
 echo "*******************"
+echo "copying by the will of Allah"
 echo "*******************"
 echo ""
 
@@ -26,4 +27,26 @@ cp -r ~/.config/waybar/* waybar/
 
 echo "will copy wofi's config by the will of Allah"
 cp -r ~/.config/wofi/* wofi/
+
+echo ""
+echo "*******************"
+echo "    git status:"
+echo "*******************"
+echo ""
+git status
+
+echo ""
+echo "*******************"
+echo "  git add --all "
+echo "*******************"
+echo ""
+git add --all
+
+echo ""
+echo "*******************"
+echo "  git add commit -am \"alhamdo li Allah\" "
+echo "*******************"
+echo ""
+git commit -am "alhamdo li Allah"
+
 
