@@ -35,7 +35,7 @@ echo "*******************                   git add --all           ************
 git add --all
 
 echo ""
-echo "*******************   git add commit -am \"alhamdo li Allah\" *******************"
+echo "*******************     git add commit -am \"alhamdo li Allah\" *******************"
 echo ""
 git commit -am "alhamdo li Allah"
 
