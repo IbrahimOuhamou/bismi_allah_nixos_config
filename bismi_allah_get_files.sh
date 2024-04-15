@@ -39,4 +39,6 @@ echo "*******************     git add commit -am \"alhamdo li Allah\" **********
 echo ""
 git commit -am "alhamdo li Allah"
 
+echo ""
+echo "*******************                   git push                *******************"
 
