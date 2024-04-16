@@ -10,6 +10,7 @@ stdenv.mkDerivation {
     glfw3
     glew
     lua
+    zig
     #pkgsCross.mingwW64.buildPackages.gcc
   ];
 }
