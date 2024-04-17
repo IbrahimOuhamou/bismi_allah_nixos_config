@@ -278,7 +278,11 @@ bindsym $mod+r mode "resize"
 #    }
 #}
 
-bar swaybar_command waybar
+bar {
+    swaybar_command waybar
+    mode hide
+    modifier $mod
+}
 
 # default_border none
 # default_floating_border none
