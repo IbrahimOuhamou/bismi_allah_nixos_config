@@ -1,31 +1,31 @@
+//in the name of Allah
 {
     "layer": "top", // Waybar at top layer
-    "position": "left", // Waybar position (top|bottom|left|right)
-    "height": 500, // Waybar height (to be removed for auto height)
-    "width": 0.5, // Waybar width
-    "spacing": 15, // Gaps between modules (4px)
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-right": ["hyprland/workspaces", "sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media", "tray"],
-    //"modules-center": ["sway/window", "hyprland/window", "hyprland/submap"],
-    "modules-left": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock"], // "tray"],
-     //Modules configuration
-     "sway/workspaces": {
-         "disable-scroll": false,
-         "all-outputs": true,
-         "warp-on-scroll": true,
-         "format": "{name}: {icon}",
-         "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "👣",
-             "4": "💬",
-             "11": "⚒️",
-             "12": "🛡️",
-             "urgent": "",
-             "focused": "🕋",
-             "default": "🕌"
-         }
-     },
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
+    // Modules configuration
+    // "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "warp-on-scroll": false,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -84,29 +84,27 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "timezone": "Africa/Casablanca",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}",
-        "format": "{:%H\n%M}"
+        "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "\n{usage}",
+        "format": "{usage}% ",
         "tooltip": false
     },
     "memory": {
-        "format": "\n{}"
+        "format": "{}% "
     },
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": " {temperatureC}\n{icon}°C",
+        "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{icon}\n{percent}",
+        "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
@@ -115,7 +113,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}\n{capacity}",
+        "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
@@ -126,31 +124,22 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
-    //"network": {
-    //    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    //    "format-wifi": "{essid} ({signalStrength}%) ",
-    //    "format-ethernet": "{ipaddr}/{cidr} ",
-    //    "tooltip-format": "{ifname} via {gwaddr} ",
-    //    "format-linked": "{ifname} (No IP) ",
-    //    "format-disconnected": "Disconnected ⚠",
-    //    "format-alt": "{ifname}: {ipaddr}/{cidr}"
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "\n{signalStrength}",
-        "format-ethernet": "\n{ipaddr}/{cidr}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "⚠",
-        "format-alt": "{ifname}"
-        //"format-alt": "{ifname}\n{ipaddr}\n  /{cidr}"
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": " {icon}\n{volume}{format_source}",
-        "format-bluetooth": "{icon}\n{volume}{format_source}",
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "\n \n{volume}",
+        "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -168,6 +157,7 @@
         "return-type": "json",
         "max-length": 40,
         "format-icons": {
+            "spotify": "",
             "default": "🎜"
         },
         "escape": true,
@@ -175,3 +165,4 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
+
