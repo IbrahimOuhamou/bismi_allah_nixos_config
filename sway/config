@@ -25,6 +25,7 @@ set $term foot
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi
+set $lock_command 'swaylock --clock --indicator --screenshots --indicator-radius 100 --effect-blur 7x5 --effect-greyscale --ring-color 00000000 --key-hl-color 880033 --line-color 00000000 --inside-color 00000000 --separator-color 00000000 --grace 5'
 
 ### Output configuration
 #
@@ -53,9 +54,11 @@ output $monitor1 res 1366x768 pos 1920 0
 # Example configuration:
 #
 exec swayidle -w \
-        timeout 1600 'swaylock --clock --indicator --screenshots --indicator-radius 100 --effect-blur 7x5 --effect-greyscale --ring-color 00000000 --key-hl-color 880033 --line-color 00000000 --inside-color 00000000 --separator-color 00000000 --grace 1' \
+        timeout 1600 $lock_command \
         timeout 2200 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-        before-sleep 'swaylock --clock --indicator --screenshots --indicator-radius 100 --effect-blur 7x5 --effect-greyscale --ring-color 00000000 --key-hl-color 880033 --line-color 00000000 --inside-color 00000000 --separator-color 00000000 --grace 1'
+        before-sleep $lock_command \
+
+bindsym $mod+$mod1+l exec $lock_command
 
 exec autotiling
 #
