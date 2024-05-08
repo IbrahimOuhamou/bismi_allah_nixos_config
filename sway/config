@@ -169,8 +169,8 @@ input * {
     bindsym $mod1+$mod2+Shift+right move container to workspace next
     bindsym $mod1+$mod2+Shift+left move container to workspace prev
 
-    workspace_auto_back_and_forth yes
-    bindsym $mod1+backspace workspace back_and_forth
+    #workspace_auto_back_and_forth yes
+    bindsym $mod+backspace workspace back_and_forth
 
     #bindgesture hold:2 exec foot
 
