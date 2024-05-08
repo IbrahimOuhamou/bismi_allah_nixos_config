@@ -160,8 +160,13 @@ input * {
     #switch to next worspace
     bindsym $mod1+right workspace next_on_output
     bindsym $mod1+left workspace prev_on_output
-    bindsym $mod1+backspace workspace back_and_forth
+    bindgesture swipe:right workspace next_on_output
+    bindgesture swipe:left workspace prev_on_output
+
     workspace_auto_back_and_forth yes
+    bindsym $mod1+backspace workspace back_and_forth
+
+    #bindgesture hold:2 exec foot
 
     # Switch to workspace
     bindsym $mod+1 workspace number 1
