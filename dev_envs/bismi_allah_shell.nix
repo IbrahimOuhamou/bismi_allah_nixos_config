@@ -10,7 +10,14 @@ stdenv.mkDerivation {
     glfw3
     glew
     lua
-    zig
+    xorg.libXcursor
+    xorg.libXrandr
+    xorg.libXinerama
+    xorg.libXv
+    xorg.libXt
+    xorg.libXp
+    xorg.libXi
+    #zig
     #pkgsCross.mingwW64.buildPackages.gcc
   ];
 }
