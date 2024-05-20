@@ -173,9 +173,11 @@ programs.neovim = {
 
 programs.tmux.enable = true;
 
-#c dev
-#nixpkgs.nativeBuildInput = [ pkgs.pkg-config ];
-#nixpkgs.mkDerivation.nativeBuildInput = [ pkgs.pkg-config ];
+programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+};
 
 #virtualisation
 virtualisation.libvirtd.enable = true;
