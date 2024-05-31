@@ -98,6 +98,7 @@ input * {
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+Shift+d exec dmenu_path | dmenu | xargs swaymsg exec --
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
