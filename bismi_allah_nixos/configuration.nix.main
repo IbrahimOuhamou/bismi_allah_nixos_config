@@ -133,6 +133,7 @@ services.xserver.desktopManager.gnome.enable = true;
   pamixer     #audio
   brightnessctl#for brightness
   wf-recorder #screen recording we can run 'wf-recorder -a' by the will of Allah
+  grim	      #screenshot
 
   #desktop
   pcmanfm
@@ -169,6 +170,8 @@ programs.waybar.enable = true;
 programs.neovim = {
   enable = true;
   defaultEditor = true;
+#  plugins = [ pkgs.vimPlugins.telescope-nvim ];
+#telescope-nvim
 };
 
 programs.tmux.enable = true;
