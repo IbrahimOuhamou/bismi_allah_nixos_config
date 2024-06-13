@@ -173,7 +173,7 @@ services.xserver.desktopManager.gnome.enable = true;
   pkgs.anki
 ];
 
-#twmorary for obsidian by the will of Allah
+#for obsidian by the will of Allah
 #nixpkgs.config.permittedInsecurePackages = [
 #  "electron-25.9.0"
 #];
