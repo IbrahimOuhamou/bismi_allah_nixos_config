@@ -17,7 +17,7 @@ stdenv.mkDerivation {
     xorg.libXt
     xorg.libXp
     xorg.libXi
-    #zig
+    zig_0_12
     #pkgsCross.mingwW64.SDL2
     #pkgsCross.mingwW64.buildPackages.SDL2
   ];
