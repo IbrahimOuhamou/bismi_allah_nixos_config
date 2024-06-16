@@ -4,8 +4,8 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 # default pkgs are in pkgs	      | sudo nix-channel --add https://channels.nixos.org/nixos-24.05 nixos
-# unstable pkgs are in pkgs-unstable  | sudo nix-channel --add https://channels.nixos.org/nixos-24.05 nixos-unstable
-# stable pkgs are in pkgs-stable      | sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixos-stable
+# unstable pkgs are in pkgs-unstable  | sudo nix-channel --add https://channels.nixos.org/nixos-24.05 nixpkgs-unstable
+# stable pkgs are in pkgs-stable      | sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixpkgs-stable
 { config, pkgs, audio, ... }:
 
 let 
