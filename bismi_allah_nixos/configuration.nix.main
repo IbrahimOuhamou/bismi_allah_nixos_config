@@ -130,8 +130,8 @@ services.xserver.desktopManager.gnome.enable = true;
   #  wget
 
   #alhamdo li Allah neovim deps
-  ripgrep
-  fzf
+  pkgs.ripgrep
+  pkgs.fzf
 
   #programming
   pkgs.libgcc
