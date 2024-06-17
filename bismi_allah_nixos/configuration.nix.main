@@ -129,6 +129,10 @@ services.xserver.desktopManager.gnome.enable = true;
   pkgs.tree
   #  wget
 
+  #alhamdo li Allah neovim deps
+  ripgrep
+  fzf
+
   #programming
   pkgs.libgcc
   pkgs.gcc
