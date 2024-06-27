@@ -186,7 +186,8 @@ environment.etc = {
 #];
 
 fonts.packages = with pkgs; [
-  font-awesome
+  pkgs.font-awesome
+# pkgs-stable.nerdfonts
 ];
 
 programs.sway.enable = true;
