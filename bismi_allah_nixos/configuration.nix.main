@@ -111,7 +111,7 @@ environment.etc = {
   users.users.ibrahimo = {
     isNormalUser = true;
     description = "Ibrahim Ouhamou";
-    extraGroups = [ "networkmanager" "wheel" "audio" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "libvirtd" "input"];
     packages = with pkgs; [];
   };
 
