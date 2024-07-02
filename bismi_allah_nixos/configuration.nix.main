@@ -175,6 +175,7 @@ environment.etc = {
   pkgs.telegram-desktop
   #bismi Allah
   pkgs.gparted
+  pkgs.mupdf #pdf viewer
 
   pkgs.libreoffice
   pkgs.anki
@@ -220,11 +221,11 @@ programs.virt-manager.enable = true;
 services.qemuGuest.enable = true;
 #users.users.ibrahimo.extraGroups = ["libvirtd"];
 
-programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-};
+# programs.steam = {
+#   enable = true;
+#   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+#   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+# };
 
 #virtualisation.virtualbox.host.enable = true;
 #virtualisation.virtualbox.host.enableExtensionPack = true;
