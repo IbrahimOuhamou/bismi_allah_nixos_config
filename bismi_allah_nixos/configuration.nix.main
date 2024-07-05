@@ -221,12 +221,6 @@ programs.virt-manager.enable = true;
 services.qemuGuest.enable = true;
 #users.users.ibrahimo.extraGroups = ["libvirtd"];
 
-# programs.steam = {
-#   enable = true;
-#   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-#   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-# };
-
 #virtualisation.virtualbox.host.enable = true;
 #virtualisation.virtualbox.host.enableExtensionPack = true;
 #users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
@@ -253,6 +247,16 @@ services.qemuGuest.enable = true;
   # networking.firewall.enable = false;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.gc = {
+    automatic = true;
+    dates = "00:01";
+  };
+
+  nix.optimise = {
+    automatic = true;
+    dates = [ "05:00" ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
