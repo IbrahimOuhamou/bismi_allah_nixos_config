@@ -8,6 +8,7 @@ in pkgs.mkShell {
       python-pkgs.django
       python-pkgs.djangorestframework
       python-pkgs.mysqlclient
+      python-pkgs.requests
     ]))
   ];
 }

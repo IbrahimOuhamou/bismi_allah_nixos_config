@@ -248,10 +248,10 @@ services.qemuGuest.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  nix.gc = {
-    automatic = true;
-    dates = "00:01";
-  };
+  # nix.gc = {
+  #   automatic = true;
+  #   dates = "00:01";
+  # };
 
   nix.optimise = {
     automatic = true;
