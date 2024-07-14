@@ -246,6 +246,10 @@ input * {
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    # bismiAllah
+    # toggle sticky mode on current window
+    bindsym $mod1+Shift+Up sticky toggle
 #
 # Scratchpad:
 #
