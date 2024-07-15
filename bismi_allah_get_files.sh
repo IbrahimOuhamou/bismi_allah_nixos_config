@@ -10,6 +10,7 @@ echo ""
 
 echo "will copy system's config by the will of Allah"
 cat /etc/nixos/configuration.nix > bismi_allah_nixos/configuration.nix.main
+cp /etc/nixos/packages/* > bismi_allah_nixos/packages/configuration.nix.main
 
 echo "will copy the dev_envs by the will of Allah"
 cp -r ~/helpers/* dev_envs/
