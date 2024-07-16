@@ -120,6 +120,10 @@ services.xserver = {
 # # services.xserver.desktopManager.plasma5.enable = true;
 
 
+  nixpkgs.config.packageOverride = pkgs: {
+    popping-dikr = pkgs.callPackage /etc/nixos/packages/popping-dikr.nix { };
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ibrahimo = {
     isNormalUser = true;
@@ -148,6 +152,11 @@ services.xserver = {
   pkgs.ripgrep
   pkgs.fzf
   pkgs.fd
+
+  #alhamdo li Allah
+  #these are just needed
+  pkgs.zip
+  pkgs.unzip
 
   #programming
   pkgs.libgcc
@@ -178,6 +187,7 @@ services.xserver = {
   #desktop
   pkgs.pcmanfm
   pkgs.vlc
+  pkgs.popping-dikr
   
   #apps
   pkgs.chromium #web browser

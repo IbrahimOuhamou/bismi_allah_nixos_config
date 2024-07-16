@@ -9,9 +9,9 @@
 , pkg-config
 }:
 
-stdenv.mkDerivation {
+stdenv.mkDerivation rec {
   pname = "popping-dikr";
-  version = "1.1";
+  version = "1.1.1";
 
   src = fetchgit {
     url = "https://github.com/muslimDevCommunity/PoppingDikr.git";
@@ -27,6 +27,11 @@ stdenv.mkDerivation {
     SDL2_ttf
     zig_0_13.hook
   ];
+
+  # installPhase = ''
+  #   mv zig-out/bin/dikr $out/${pname}
+  #   mv zig-out/bin/settings $out/${pname}-settings
+  # '';
 
   meta = with lib; {
     description = "Dikr app that shows itself every now and then";
