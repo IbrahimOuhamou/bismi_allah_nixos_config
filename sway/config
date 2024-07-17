@@ -334,7 +334,7 @@ bindsym XF86AudioMute exec pamixer -t
 bindsym XF86MonBrightnessUp exec brightnessctl s +5%
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 
-exec ~/projects/popping-dikr/zig-out/bin/dikr
+exec ~/projects/popping-dikr/zig-out/bin/popping-dikr
 exec anki
 
 include /etc/sway/config.d/*

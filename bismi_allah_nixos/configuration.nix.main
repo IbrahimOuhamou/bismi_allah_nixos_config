@@ -120,7 +120,7 @@ services.xserver = {
 # # services.xserver.desktopManager.plasma5.enable = true;
 
 
-  nixpkgs.config.packageOverride = pkgs: {
+  nixpkgs.config.extraPackages = pkgs: {
     popping-dikr = pkgs.callPackage /etc/nixos/packages/popping-dikr.nix { };
   };
 
@@ -187,7 +187,8 @@ services.xserver = {
   #desktop
   pkgs.pcmanfm
   pkgs.vlc
-  pkgs.popping-dikr
+  #pkgs.popping-dikr
+  (pkgs.callPackage /etc/nixos/packages/popping-dikr.nix { })
   
   #apps
   pkgs.chromium #web browser
