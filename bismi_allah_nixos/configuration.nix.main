@@ -189,6 +189,7 @@ services.xserver = {
   pkgs.vlc
   #pkgs.popping-dikr
   (pkgs.callPackage /etc/nixos/packages/popping-dikr.nix { })
+  (pkgs.callPackage /etc/nixos/packages/quran-warsh.nix { })
   
   #apps
   pkgs.chromium #web browser
