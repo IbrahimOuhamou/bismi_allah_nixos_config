@@ -145,6 +145,7 @@ services.xserver = {
   pkgs.git
   pkgs.zellij
   pkgs.tree
+  pkgs.htop
   #  wget
 
   #alhamdo li Allah neovim-plugins deps
