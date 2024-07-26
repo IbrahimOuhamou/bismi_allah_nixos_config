@@ -1,0 +1,7 @@
+[colors]
+    alpha = 0.3
+    background=000000
+    foreground=ffffff
+
+[main]
+    font = monospace:size=15
