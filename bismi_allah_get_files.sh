@@ -27,6 +27,9 @@ cp -r ~/.config/waybar/* waybar/
 echo "will copy wofi's config by the will of Allah"
 cp -r ~/.config/wofi/* wofi/
 
+echo "will copy waypaper's config by the will of Allah"
+cp -r ~/.config/waypaper/* waypaper/
+
 echo ""
 echo "*******************                   git status              *******************"
 git status
