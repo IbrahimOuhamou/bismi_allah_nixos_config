@@ -104,17 +104,18 @@ environment.etc = {
 ### GNOME
 
 # Enable the X11 windowing system
-services.xserver = {
-  enable = true;
-  displayManager.gdm.enable = true;
-  desktopManager.gnome.enable = true;
-};
+# services.xserver = {
+#   enable = true;
+#   displayManager.gdm.enable = true;
+#   desktopManager.gnome.enable = true;
+# };
 
 # ### PLASMA6
 # services.xserver.enable = true;
-# # You may need to comment out "services.displayManager.gdm.enable = true;"
-# services.displayManager.sddm.enable = true;
-# services.desktopManager.plasma6.enable = true;
+# You may need to comment out "services.displayManager.gdm.enable = true;"
+services.xserver.enable = true;
+services.displayManager.sddm.enable = true;
+services.desktopManager.plasma6.enable = true;
 # # or 
 # # services.xserver.desktopManager.plasma5.enable = true;
 
