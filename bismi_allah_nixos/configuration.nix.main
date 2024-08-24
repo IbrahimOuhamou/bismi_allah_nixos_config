@@ -143,6 +143,7 @@ services.desktopManager.plasma6.enable = true;
   environment.systemPackages = [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   pkgs.neovim
+  pkgs.kitty
   pkgs.git
   pkgs.zellij
   pkgs.tree
