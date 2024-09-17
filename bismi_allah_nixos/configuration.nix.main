@@ -196,7 +196,7 @@ services.desktopManager.plasma6.enable = true;
   #apps
   pkgs.chromium #web browser
   #obsidian
-  pkgs-stable.obsidian
+  pkgs.obsidian
   pkgs.gimp
   pkgs.discord
   pkgs.telegram-desktop
