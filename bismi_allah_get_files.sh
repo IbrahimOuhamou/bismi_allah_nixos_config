@@ -21,6 +21,9 @@ cp -r ~/.config/sway/* sway/
 echo "will copy foot's config by the will of Allah"
 cp -r ~/.config/foot/* foot/
 
+echo "will copy kitty's config by the will of Allah"
+cp -r ~/.config/kitty/* kitty/
+
 echo "will copy waybar's config by the will of Allah"
 cp -r ~/.config/waybar/* waybar/
 
