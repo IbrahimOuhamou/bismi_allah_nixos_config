@@ -278,6 +278,8 @@ services.qemuGuest.enable = true;
       upstreams.groups.default = [
         "https://one.one.one.one/dns-query" # Using Cloudflare's DNS over HTTPS server for resolving queries.
       ];
+      listenAddress = [ "127.0.0.1:53" ];  # Listen only on localhost, port 53
+
       # For initially solving DoH/DoT Requests when no system Resolver is available.
       bootstrapDns = {
         upstream = "https://one.one.one.one/dns-query";
