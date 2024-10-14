@@ -114,8 +114,13 @@ environment.etc = {
 # services.xserver.enable = true;
 # You may need to comment out "services.displayManager.gdm.enable = true;"
 services.xserver.enable = true;
-services.displayManager.sddm.enable = true;
-services.desktopManager.plasma6.enable = true;
+# services.displayManager.sddm.enable = true;
+# services.desktopManager.plasma6.enable = true;
+services.xserver.displayManager.lightdm = {
+  enable = true;
+  greeters.slick.enable = true;
+};
+services.xserver.desktopManager.xfce.enable = true;
 # # or 
 # # services.xserver.desktopManager.plasma5.enable = true;
 
@@ -161,13 +166,14 @@ services.desktopManager.plasma6.enable = true;
   pkgs.unzip
 
   #programming
-  pkgs.libgcc
-  pkgs.gcc
-  pkgs.gnumake
-  pkgs.pkg-config
-  pkgs.gdb
+  # pkgs.libgcc
+  # pkgs.gcc
+  # pkgs.gnumake
+  # pkgs.pkg-config
+  # pkgs.gdb
   pkgs.clang
   pkgs.python3
+  # pkgs.zig
 
   #building and testing
   pkgs.qemu
@@ -306,8 +312,8 @@ services.qemuGuest.enable = true;
         };
         #Configure what block categories are used
         clientGroupsBlock = {
-          default = [ "ads" "adult" "other" ];
-          kids-ipad = ["ads" "adult"];
+          default = [ "adult" "other" ];
+          kids-ipad = [ "adult" ];
         };
       };
     };
