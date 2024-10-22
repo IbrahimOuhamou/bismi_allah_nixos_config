@@ -327,8 +327,8 @@ default_floating_border none
 titlebar_padding 1
 titlebar_border_thickness 1
 
-gaps inner 10
-gaps outer 5
+# gaps inner 10
+# gaps outer 5
 
 #########Sound
 bindsym XF86AudioRaiseVolume exec pamixer -i 5 --allow-boost
