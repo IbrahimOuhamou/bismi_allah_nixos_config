@@ -13,19 +13,21 @@ window
 
 #entry
 {
-    background: linear-gradient(90deg, rgba(100, 0, 100, 0.5), rgba(100, 100, 100, 0.1));
+    /* background: linear-gradient(90deg, rgba(100, 0, 100, 0.5), rgba(100, 100, 100, 0.1)); */
+    background: rgb(20, 20, 20);
+    color: grey;
 }
 
 #entry:selected
 {
     background-color: lightblue;
-    background: linear-gradient(90deg, #bbccdd, #dda5dd);
+    background: grey;
     color: black;
 }
 
 #text:selected
 {
-    color: black;
+    color: white;
 }
 
 #input
