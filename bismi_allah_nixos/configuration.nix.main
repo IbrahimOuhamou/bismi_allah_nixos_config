@@ -192,6 +192,7 @@ services.xserver.desktopManager.xfce.enable = true;
   pkgs.grim	      #screenshot
   pkgs.waypaper
   pkgs.swaybg
+  pkgs.dmenu
 
   #desktop
   pkgs.pcmanfm
@@ -314,7 +315,6 @@ services.qemuGuest.enable = true;
         #Configure what block categories are used
         clientGroupsBlock = {
           default = [ "adult" "other" ];
-          kids-ipad = [ "adult" ];
         };
       };
     };
