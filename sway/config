@@ -342,7 +342,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 
 # because I am the dev of that package I have to test the new changes
 # exec popping-dikr
-exec ~/projects/popping-dikr/zig-out/bin/popping-dikr
+exec ~/projects/PoppingDikr/zig-out/bin/popping-dikr
 exec anki
 
 include /etc/sway/config.d/*
