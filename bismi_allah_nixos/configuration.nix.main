@@ -14,11 +14,11 @@ let
       allowUnfree = true;
     };
   };
-  pkgs-stable = import <nixpkgs-stable> { 
-    config = {
-      allowUnfree = true;
-    };
-  };
+  # pkgs-stable = import <nixpkgs-stable> { 
+  #   config = {
+  #     allowUnfree = true;
+  #   };
+  # };
 in
 {
   imports =
@@ -120,7 +120,7 @@ services.xserver.displayManager.lightdm = {
   enable = true;
   greeters.slick.enable = true;
 };
-services.xserver.desktopManager.xfce.enable = true;
+# services.xserver.desktopManager.xfce.enable = true;
 # # or 
 # # services.xserver.desktopManager.plasma5.enable = true;
 
@@ -172,8 +172,8 @@ services.xserver.desktopManager.xfce.enable = true;
   # pkgs.gnumake
   # pkgs.pkg-config
   # pkgs.gdb
-  pkgs.clang
-  pkgs-stable.python3
+  # pkgs.clang
+  pkgs.python3
   # pkgs.zig
 
   #building and testing
@@ -247,8 +247,6 @@ programs.neovim = {
 #  plugins = [ pkgs.vimPlugins.telescope-nvim ];
 #telescope-nvim
 };
-
-programs.tmux.enable = true;
 
 #virtualisation
 virtualisation.libvirtd.enable = true;
