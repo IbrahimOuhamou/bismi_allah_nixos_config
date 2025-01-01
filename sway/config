@@ -47,7 +47,7 @@ set $monitor0 eDP-1
 set $monitor1 DP-2
 #set $monitor1 HDMI-A-1
 
-output $monitor0 res 1920x1080 pos 0 0
+output $monitor0 res 1920x1080 pos 0 0 
 output $monitor1 res 1366x768 pos 1920 0
 #output $monitor1 res 1024x768 pos 1920 0
 #output $monitor1 res 1366x768 pos 1920 0 @30Hz
