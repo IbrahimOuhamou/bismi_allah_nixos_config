@@ -8,7 +8,7 @@ mkShell {
 
   shellHook = ''
     initdb -D /tmp/postresql/bismi_allah_db
-    pg_ctl -D /tmp/postresql/bismi_allah_db -l /tmp/postgresql/logfile start
+    pg_ctl -D /tmp/postresql/bismi_allah_db -l /tmp/postresql/logfile start
 
     trap "pg_ctl -D /tmp/postresql/bismi_allah_db stop" EXIT
   '';
