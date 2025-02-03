@@ -1,4 +1,5 @@
-#in the name of Allah
+# بسم الله الرحمن الرحيم
+# la ilaha illa Allah Mohammed Rassoul Allah
 with import <nixpkgs> {};
 stdenv.mkDerivation {
   name = "react-bootstrap-shell";
@@ -8,4 +9,8 @@ stdenv.mkDerivation {
     nodejs
     yarn
   ];
+
+  shellHook = ''
+    npm config set prefix ~/.cache/npm/modules/
+  '';
 }
