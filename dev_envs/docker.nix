@@ -3,7 +3,10 @@
 
 let pkgs = import <nixpkgs> {};
 in pkgs.mkShell {
-  buildInputs = [ pkgs.docker ];
+  buildInputs = [
+    pkgs.docker
+    pkgs.docker-compose
+  ];
   shellHook = ''
     echo "بسم الله الرحمن الرحيم"
     echo "la ilaha illa Allah Mohammed Rassoul Allah"

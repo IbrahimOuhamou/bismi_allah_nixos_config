@@ -352,7 +352,7 @@ services.qemuGuest.enable = true;
 
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8000 ];
+  networking.firewall.allowedTCPPorts = [ 8000 8080 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -371,6 +371,30 @@ services.qemuGuest.enable = true;
   nix.optimise = {
     automatic = true;
     dates = [ "05:00" ];
+  };
+
+  
+  # Define the Jetzig service
+  systemd.services.kickstart-jetzig = {
+    enable = true;
+    description = "Kickstart Jetzig Service";
+    wantedBy = [ "multi-user.target" ];
+
+    serviceConfig = {
+      ExecStart = "/var/lib/kickstart-jetzig/server"; # Replace with the actual path to your Jetzig binary
+      Restart = "always";
+      # User = "jetzig"; # Replace with the desired user
+      # Group = "jetzig"; # Replace with the desired group
+      User = "root"; # Replace with the desired user
+      # Group = "jetzig"; # Replace with the desired group
+      WorkingDirectory = "/var/lib/kickstart-jetzig"; # Replace with your desired working directory
+      StateDirectory = "kickstart-jetzig"; # Automatically creates /var/lib/jetzig and sets permissions
+    };
+
+    environment = {
+      # Add any environment variables required by your Jetzig binary
+      JETZIG_SECRET = builtins.readFile "/secrets/jetzig_secret";
+    };
   };
 
   # This value determines the NixOS release from which the default
