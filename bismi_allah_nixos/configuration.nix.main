@@ -350,9 +350,61 @@ services.qemuGuest.enable = true;
   # virtualisation.anbox = enable = true;
   virtualisation.waydroid.enable = true;
 
+services.nginx = {
+  enable = true;
+
+  # Recommended settings from the NixOS wiki
+  recommendedProxySettings = true;  # Adds common security & performance settings
+  # recommendedGzipSettings = true;   # Enables gzip compression
+  recommendedOptimisation = true;   # Tweaks worker processes and caching
+  # recommendedTlsSettings = true;    # Applies secure TLS settings (if using HTTPS)
+
+  virtualHosts."proxy" = {
+    listen = [
+      {
+        addr = "127.0.0.1";
+        port = 12000;
+      }
+    ];
+
+    # Proxy configuration for main backend
+    locations."/" = {
+      proxyPass = "http://localhost:8080";
+
+      extraConfig = ''
+        proxy_intercept_errors on;
+        error_page 404 502 503 @svelte;
+        if ($request_method !~ ^(GET|HEAD)$) {
+          proxy_pass http://localhost:8080;
+          break;
+        }
+        try_files $uri @backend @svelte;
+      '';
+    };
+
+    locations."/api" = {
+      proxyPass = "http://localhost:8080";
+    };
+
+    locations."@backend" = {
+      proxyPass = "http://localhost:8080";
+    };
+
+    # Fallback location for the second backend
+    locations."@svelte" = {
+      proxyPass = "http://localhost:5173";
+       extraConfig = ''
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+      '';
+    };
+  };
+};
+
+
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8000 8080 ];
+  networking.firewall.allowedTCPPorts = [ 8000 8080 12000 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -375,27 +427,27 @@ services.qemuGuest.enable = true;
 
   
   # Define the Jetzig service
-  systemd.services.kickstart-jetzig = {
-    enable = true;
-    description = "Kickstart Jetzig Service";
-    wantedBy = [ "multi-user.target" ];
-
-    serviceConfig = {
-      ExecStart = "/var/lib/kickstart-jetzig/server"; # Replace with the actual path to your Jetzig binary
-      Restart = "always";
-      # User = "jetzig"; # Replace with the desired user
-      # Group = "jetzig"; # Replace with the desired group
-      User = "root"; # Replace with the desired user
-      # Group = "jetzig"; # Replace with the desired group
-      WorkingDirectory = "/var/lib/kickstart-jetzig"; # Replace with your desired working directory
-      StateDirectory = "kickstart-jetzig"; # Automatically creates /var/lib/jetzig and sets permissions
-    };
-
-    environment = {
-      # Add any environment variables required by your Jetzig binary
-      JETZIG_SECRET = builtins.readFile "/secrets/jetzig_secret";
-    };
-  };
+  # systemd.services.kickstart-jetzig = {
+  #   enable = true;
+  #   description = "Kickstart Jetzig Service";
+  #   wantedBy = [ "multi-user.target" ];
+  #
+  #   serviceConfig = {
+  #     ExecStart = "/var/lib/kickstart-jetzig/server"; # Replace with the actual path to your Jetzig binary
+  #     Restart = "always";
+  #     # User = "jetzig"; # Replace with the desired user
+  #     # Group = "jetzig"; # Replace with the desired group
+  #     User = "root"; # Replace with the desired user
+  #     # Group = "jetzig"; # Replace with the desired group
+  #     WorkingDirectory = "/var/lib/kickstart-jetzig"; # Replace with your desired working directory
+  #     StateDirectory = "kickstart-jetzig"; # Automatically creates /var/lib/jetzig and sets permissions
+  #   };
+  #
+  #   environment = {
+  #     # Add any environment variables required by your Jetzig binary
+  #     JETZIG_SECRET = builtins.readFile "/secrets/jetzig_secret";
+  #   };
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -403,6 +455,6 @@ services.qemuGuest.enable = true;
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "unstable"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }
