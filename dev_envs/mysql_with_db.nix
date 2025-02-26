@@ -9,7 +9,7 @@ in pkgs.mkShell {
     echo "بسم الله الرحمن الرحيم"
     echo "la ilaha illa Allah Mohammed Rassoul Allah"
     MYSQL_BASEDIR=${pkgs.mariadb}
-    MYSQL_HOME="/tmp/mysql"
+    MYSQL_HOME="$PWD/mysql"
     MYSQL_DATADIR="$MYSQL_HOME/data"
     export MYSQL_UNIX_PORT="$MYSQL_HOME/mysql.sock"
     MYSQL_PID_FILE="$MYSQL_HOME/mysql.pid"
