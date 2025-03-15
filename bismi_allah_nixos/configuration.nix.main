@@ -130,6 +130,7 @@ services.xserver.enable = true;
 
   nixpkgs.config.extraPackages = pkgs: {
     popping-dikr = pkgs.callPackage /etc/nixos/packages/popping-dikr.nix { };
+    quran-warsh = pkgs.callPackage /etc/nixos/packages/quran-warsh { };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -210,6 +211,8 @@ services.xserver.enable = true;
 
   #pkgs.popping-dikr
   #(pkgs.callPackage /etc/nixos/packages/popping-dikr.nix { })
+
+  (pkgs.callPackage /etc/nixos/packages/quran-warsh { })
 
   # (pkgs.callPackage /etc/nixos/packages/quran-warsh.nix { })
   
