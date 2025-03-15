@@ -210,7 +210,7 @@ services.xserver.enable = true;
   pkgs.vlc
 
   #pkgs.popping-dikr
-  #(pkgs.callPackage /etc/nixos/packages/popping-dikr.nix { })
+  (pkgs.callPackage /etc/nixos/packages/popping-dikr.nix { })
 
   (pkgs.callPackage /etc/nixos/packages/quran-warsh { })
 
