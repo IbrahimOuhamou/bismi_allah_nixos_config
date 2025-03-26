@@ -12,6 +12,8 @@ stdenv.mkDerivation {
     gdk-pixbuf
     webkitgtk_4_1
     libsoup_3
+    glibc
+    fuse
     # appimagekit
     # gdk
     # glfw3

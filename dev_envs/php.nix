@@ -6,7 +6,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [
     php
-    php83Packages.composer
+    phpPackages.composer
     symfony-cli
   ];
 }
